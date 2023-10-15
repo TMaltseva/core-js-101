@@ -66,7 +66,10 @@ function getStringFromTemplate(firstName, lastName) {
  *   'Hello, Chuck Norris!' => 'Chuck Norris'
  */
 function extractNameFromTemplate(value) {
-
+  const match = value.match(/Hello, (.+?)!/);
+  if (match) {
+    return match[1];
+  }
 }
 
 
