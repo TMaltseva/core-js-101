@@ -461,16 +461,16 @@ function getCommonDirectoryPath(pathes) {
     return '';
 }
 
-const pathComponents = pathes.map(path => path.split('/'));
+const pathComps = pathes.map(path => path.split('/'));
 
-const minPathLength = Math.min(...pathComponents.map(arr => arr.length));
+const minPathLength = Math.min(...pathComps.map(arr => arr.length));
 
 const result = [];
 
 for (let i = 0; i < minPathLength; i++) {
-    const commonComponent = pathComponents[0][i];
-    if (pathComponents.every(arr => arr[i] === commonComponent)) {
-        result.push(commonComponent);
+    const commonComp = pathComps[0][i];
+    if (pathComps.every(arr => arr[i] === commonComp)) {
+        result.push(commonComp);
     } else {
         break;
     }
